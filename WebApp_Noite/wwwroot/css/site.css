@@ -16,3 +16,22 @@ html {
 body {
   margin-bottom: 60px;
 }
+.formulario{
+    width:50%;
+    display:block;
+    margin:auto;
+    padding:8px;
+}
+.mb-3{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.form-control{
+    width:70%;
+}
+.center{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
