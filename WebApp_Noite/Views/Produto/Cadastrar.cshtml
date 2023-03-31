@@ -1,0 +1,29 @@
+﻿<div class="row">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <h2>Cadastro de Produto</h2>
+            </div>
+            <div class="card-body">
+                <form action="/Produto/Salvar" method="POST">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="quantidade" class="form-label">Quantidade em Estoque</label>
+                        <input type="number" class="form-control" id="quantidade" name="qtdEstoque" required>
+                    </div>    
+                    <div id="center">
+                    <input type="reset" name="btnLimpar" class="btn btn-danger" value="Limpar Campo" />
+                    <input type="submit" name="btnEnviar" class="btn btn-primary" value="Salvar Produto" />
+                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+    </div>
+</div>

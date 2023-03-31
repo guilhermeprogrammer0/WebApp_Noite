@@ -34,3 +34,12 @@ body {
     justify-content:center;
     gap:25px;
 }
+h2 {
+    color: #0554F2;
+    text-align:center;
+}
+#center{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
