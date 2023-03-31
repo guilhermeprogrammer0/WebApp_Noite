@@ -4,7 +4,7 @@ namespace WebApp_Noite.Controllers
 {
     public class ProdutoController : Controller
     {
-        public IActionResult Listar()
+        public IActionResult Lista()
         {
             return View();
         }
@@ -12,5 +12,6 @@ namespace WebApp_Noite.Controllers
         {
             return View();
         }
+
     }
 }
