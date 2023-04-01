@@ -3,19 +3,19 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h2>Lista de Produtos</h2>
+                <h2>Lista de Clientes</h2>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-2">
-                        <a href="/Produto/Cadastrar" class="btn btn-success"> Novo Produto</a>
+                        <a href="/Cliente/Cadastrar" class="btn btn-success"> Novo Cliente</a>
                     </div>
                     <div class="col-4">
                         <select name="filtro" class="form-control">
                             <option value="0"> Todas as Opções</option>
                             <option value="id"> Por Código</option>
                             <option value="nome">Por Nome</option>
-                            <option value="qtd"> Por Quantidade</option>
+                            <option value="qtd"> Por Telefone</option>
                         </select>
                     </div>
                     <div class="col-4">
@@ -25,46 +25,44 @@
                         <button class="btn btn-primary">Pesquisar</button>
                     </div>
                 </div>
-                <form action="/Produto/Pesquisa" method="GET">
-
-                    
+                <form action="/Cliente/Pesquisa" method="GET">
                 </form>
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Código</th>
                             <th scope="col">Nome</th>
-                            <th scope="col">Quantidade em Estoque</th>
+                            <th scope="col">Telefone</th>
                             <th scope="col">Editar</th>
-                            <th scope="col">Excluir</th>
+                            <th scope="col">Excluir</th>             
                         </tr>
                     </thead>
                     <tbody>
-                        <tr> 
+                        <tr>
                             <td>1</td>
-                            <td>Mouse Gamer</td>
-                            <td>150</td>
+                            <td>Guilherme</td>
+                            <td>16996091036</td>
                             <td><a href="/Produto/Editar/1" class="btn btn-warning">Editar</a></td>
                             <td><a href="/Produto/Excluir/1" class="btn btn-danger">Excluir</a></td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>Teclado</td>
-                            <td>185</td>
+                            <td>Émerson</td>
+                            <td>16998521475</td>
                             <td><a href="/Produto/Editar/2" class="btn btn-warning">Editar</a></td>
                             <td><a href="/Produto/Excluir/2" class="btn btn-danger">Excluir</a></td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>Monitor</td>
-                            <td>580</td>
+                            <td>Matheus</td>
+                            <td>16997451202</td>
                             <td><a href="/Produto/Editar/3" class="btn btn-warning">Editar</a></td>
                             <td><a href="/Produto/Excluir/3" class="btn btn-danger">Excluir</a></td>
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>Gabinete</td>
-                            <td>250</td>
+                            <td>Maysa</td>
+                            <td>16993020158</td>
                             <td><a href="/Produto/Editar/4" class="btn btn-warning">Editar</a></td>
                             <td><a href="/Produto/Excluir/4" class="btn btn-danger">Excluir</a></td>
                         </tr>
@@ -73,5 +71,5 @@
             </div>
         </div>
     </div>
- 
+
 </div>
