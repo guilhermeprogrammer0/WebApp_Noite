@@ -1,4 +1,5 @@
-﻿<div class="row">
+﻿@model List<WebApp_Noite.Models.ClientesModel>
+<div class="row">
 
     <div class="col-12">
         <div class="card">
@@ -38,38 +39,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Guilherme</td>
-                            <td>16996091036</td>
-                            <td><a href="/Produto/Editar/1" class="btn btn-warning">Editar</a></td>
-                            <td><a href="/Produto/Excluir/1" class="btn btn-danger">Excluir</a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Émerson</td>
-                            <td>16998521475</td>
-                            <td><a href="/Produto/Editar/2" class="btn btn-warning">Editar</a></td>
-                            <td><a href="/Produto/Excluir/2" class="btn btn-danger">Excluir</a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Matheus</td>
-                            <td>16997451202</td>
-                            <td><a href="/Produto/Editar/3" class="btn btn-warning">Editar</a></td>
-                            <td><a href="/Produto/Excluir/3" class="btn btn-danger">Excluir</a></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Maysa</td>
-                            <td>16993020158</td>
-                            <td><a href="/Produto/Editar/4" class="btn btn-warning">Editar</a></td>
-                            <td><a href="/Produto/Excluir/4" class="btn btn-danger">Excluir</a></td>
-                        </tr>
+                        @foreach(var cliente in Model)
+                        {
+                           <tr>
+                               <td>@cliente.Id</td>
+                                <td>@cliente.Nome</td>
+                               <td>@cliente.Telefone</td>
+                                <td><a href="/Cliente/Editar/@cliente.Id" class="btn btn-warning">Editar</a></td>
+                                <td><a href="/Cliente/Excluir/@cliente.Id" class="btn btn-danger">Excluir</a></td>
+                           </tr> 
+                        }
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
 </div>

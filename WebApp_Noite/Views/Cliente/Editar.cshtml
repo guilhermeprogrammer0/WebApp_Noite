@@ -10,16 +10,20 @@
             <div class="card-body">
                 <form action="/Cliente/SalvarDados" method="POST">
                     <div class="mb-3">
+                        <label for="nome" class="form-label">Id</label>
+                        <input type="text" class="form-control" id="id" name="Id" readonly value="@Model.Id">
+                    </div>
+                    <div class="mb-3">
                         <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="Nome" required>
+                        <input type="text" class="form-control" id="nome" name="Nome" required value="@Model.Nome">
                     </div>
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Telefone</label>
-                        <input type="number" class="form-control" id="telefone" name="Telefone" required>
+                        <input type="number" class="form-control" id="telefone" name="Telefone" required value="@Model.Telefone">
                     </div>
                     <div id="center">
                         <input type="reset" name="btnLimpar" class="btn btn-danger" value="Limpar Campos" />
-                        <input type="submit" name="btnEnviar" class="btn btn-primary" value="Salvar Cliente" />
+                        <input type="submit" name="btnEnviar" class="btn btn-primary" value="Alterar Cliente" />
                     </div>
                 </form>
             </div>
