@@ -1,14 +1,45 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 using WebApp_Noite.Models;
+using WebApp_Noite.Tabelas;
 
 namespace WebApp_Noite.Controllers
 {
     public class ProdutoController : Controller
     {
-        public static List<ProdutosModel> db_produtos = new List<ProdutosModel>();  
-        public IActionResult Lista()
+        public static List<ProdutosModel> db_produtos = new List<ProdutosModel>();
+        private Contexto db;
+
+        public ProdutoController(Contexto contexto) { 
+        
+            db = contexto;
+        }
+        public IActionResult Lista(String filtro, string busca)
         {
-            return View(db_produtos);
+            if (string.IsNullOrEmpty(busca))
+            {
+                return View(db_produtos);
+            }
+            else
+            {
+                switch (filtro)
+                {     
+                    case "id":
+                        return View(db_produtos.Where(a => a.Id.ToString() == busca).ToList());
+                    break;
+                    case "nome":
+                        return View(db_produtos.Where(a => a.Nome.Contains(busca)).ToList());
+                        break;
+                    case "qtd":
+                        return View(db_produtos.Where(a => a.QtdEstoque.ToString() == busca).ToList());
+                        break;
+                    default:
+                        return View(
+                            db_produtos.Where(a => a.Id.ToString() == busca || a.Nome.Contains(busca) || a.QtdEstoque.ToString() == busca).ToList());
+                    break;
+
+                }
+            }
         }
         public IActionResult Cadastrar()
         {

@@ -15,9 +15,18 @@ namespace WebApp_Noite.Controllers
             return View(new Categorias());
         }
 
-        public IActionResult Lista()
+        public IActionResult Lista(string Busca)
         {
-            return View(db.Categorias.ToList());
+            if (string.IsNullOrEmpty(Busca))
+            {
+                return View(db.Categorias.ToList());
+            }
+            else
+            {
+                List<Categorias> dados = new List<Categorias>();
+                dados = db.Categorias.Where(a => a.Nome.Contains(Busca)).ToList();
+                return View(dados);
+            }
         }
         [HttpPost]
         public IActionResult SalvarDados(Categorias dados)
@@ -26,6 +35,7 @@ namespace WebApp_Noite.Controllers
             db.SaveChanges();
             return RedirectToAction("Lista");
         }
+        
 
         
     }
